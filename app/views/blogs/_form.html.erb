@@ -1,0 +1,6 @@
+<%= simple_form_for @blog do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content, as: :text %>
+  <%= f.input :tags, as: :string, input_html: {value: @blog.tags.join(", ")} %>
+  <%= f.button :submit %>
+<% end %>

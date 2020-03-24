@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  get 'blog/index'
-  get 'blog/new'
-  get 'blog/create'
-  get 'blog/edit'
-  get 'blog/update'
-  get 'blog/delete'
-  get 'blog/search'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'blog#index'
+
+  resources :blogs, constraints: {id: /[0-9]+/}
 end

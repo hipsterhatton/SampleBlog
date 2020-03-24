@@ -6,10 +6,11 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= flash[:success].html_safe if !flash[:success].blank? %>
+    <%= flash[:error].html_safe if !flash[:error].blank? %>
     <%= yield %>
   </body>
 </html>
